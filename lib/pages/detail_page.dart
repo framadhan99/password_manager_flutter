@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
       body: Center(
         child: Container(
           margin: EdgeInsets.all(50),
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           width: 400,
           decoration: BoxDecoration(
             border: Border.all(
@@ -43,14 +43,17 @@ class DetailPage extends StatelessWidget {
                     verticalSpace(5),
                     Container(
                       height: 35,
-                      width: 300,
+                      width: screenWidth(context),
                       padding: EdgeInsets.symmetric(horizontal: 15),
                       decoration: BoxDecoration(
                         border: Border.all(color: AssetColors.greenLight),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       alignment: Alignment.centerLeft,
-                      child: Text('Fajar@gmail.com'),
+                      child: Text(
+                        'Fajar@gmail.com',
+                        style: AssetStyles.mediumTitle.copyWith(fontSize: 14),
+                      ),
                     ),
                   ],
                 ),
@@ -64,7 +67,7 @@ class DetailPage extends StatelessWidget {
                       verticalSpace(5),
                       Container(
                         height: 35,
-                        width: 300,
+                        width: screenWidth(context),
                         padding: EdgeInsets.symmetric(horizontal: 15),
                         decoration: BoxDecoration(
                           border: Border.all(color: AssetColors.greenLight),
