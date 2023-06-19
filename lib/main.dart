@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:password_manager_flutter/pages/category_page.dart';
-import 'package:password_manager_flutter/pages/from_page.dart';
-import 'package:password_manager_flutter/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
