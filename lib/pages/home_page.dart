@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:password_manager_flutter/config/asset_colors.dart';
 import 'package:password_manager_flutter/config/asset_styles.dart';
 import 'package:password_manager_flutter/config/ui_helper.dart';
+import 'package:password_manager_flutter/pages/from_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,95 +10,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+        body: Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: 250,
-            color: AssetColors.greenLight,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 50,
-            ),
-            child: Column(children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Categories',
-                    style: AssetStyles.mediumTitle,
-                  ),
-                  const Spacer(),
-                  Container(
-                    height: 23,
-                    width: 33,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: AssetColors.orangePastel,
-                    ),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 18,
-                    ),
-                  ),
-                ],
-              ),
-              verticalSpace(20),
-              ...List.generate(4, (index) {
+          Text(
+            'Dashboard',
+            style: AssetStyles.bigTitle.copyWith(color: AssetColors.greyDark),
+          ),
+          verticalSpace(20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ...List.generate(3, (index) {
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Categories',
-                        style: AssetStyles.mediumTitle.copyWith(
-                          fontSize: 16,
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 200,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: AssetColors.greenDark,
+                    ),
+                    alignment: Alignment.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Categories',
+                          style: AssetStyles.mediumTitle
+                              .copyWith(color: Colors.white),
                         ),
-                      ),
-                      const Spacer(),
-                      Container(
-                        height: 28,
-                        width: 28,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
+                        verticalSpace(20),
+                        Text(
                           '5',
-                          style: AssetStyles.bigDescription.copyWith(
-                            color: AssetColors.grey,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                          style: AssetStyles.mediumTitle.copyWith(
+                            color: Colors.white,
+                            fontSize: 50,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-              const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Logout',
-                    style: AssetStyles.mediumTitle.copyWith(
-                      fontSize: 18,
+                      ],
                     ),
                   ),
-                  horizontalSpace(20),
-                  const Icon(
-                    Icons.exit_to_app,
-                    color: AssetColors.grey,
-                  )
-                ],
-              )
-            ]),
+                );
+              })
+            ],
           ),
         ],
       ),
-    );
+    ));
   }
 }
